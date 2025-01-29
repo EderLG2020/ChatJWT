@@ -12,33 +12,40 @@ const FormPage: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({ question: '', answer: '' });
     const [message, setMessage] = useState<string>('');
     const [socket, setSocket] = useState<any>(null);
+    const [showModal, setShowModal] = useState<boolean>(false);
 
     useEffect(() => {
-        const socketConnection = io('http://localhost:3001'); // Asegúrate de que el puerto sea correcto
+        const socketConnection = io('http://localhost:3001');
 
-        socketConnection.on('userId', (id: string) => {
-            setUserId(id);
-            console.log('ID de usuario recibido:', id);
+        socketConnection.on('connect', () => {
+            console.log('Conectado al servidor');
+        });
+
+        // Emite el ID de usuario una vez que se establezca la conexión
+        socketConnection.on('connect', () => {
+            if (userId) {
+                socketConnection.emit('setUserId', userId);
+                console.log('ID de usuario enviado:', userId);
+            }
         });
 
         socketConnection.on('message', (msg: string) => {
             setMessage(msg);
+            setShowModal(true);
             console.log('Mensaje recibido:', msg);
         });
 
-        // Guardar la conexión del socket
         setSocket(socketConnection);
 
         return () => {
             socketConnection.disconnect();
         };
-    }, []);
+    }, [userId]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (userId && formData.question && formData.answer && userName) {
             console.log('Enviando datos...');
-            // Emitir datos al servidor, incluyendo el nombre del usuario
             socket.emit('sendData', { userId, userName, formData });
         }
     };
@@ -46,6 +53,10 @@ const FormPage: React.FC = () => {
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
     };
 
     return (
@@ -91,6 +102,18 @@ const FormPage: React.FC = () => {
                     </form>
 
                     {message && <p>{message}</p>}
+                </div>
+            )}
+
+            {showModal && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <span className="close" onClick={handleCloseModal}>
+                            &times;
+                        </span>
+                        <h2>Notificación</h2>
+                        <p>{message}</p>
+                    </div>
                 </div>
             )}
         </div>

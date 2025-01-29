@@ -44,7 +44,21 @@ router.post("/encrypt", (req, res) => {
     });
   }
 });
+
+// Ruta para cerrar sesión (logout)
+app.post("/logout", (req, res) => {
+  res.clearCookie("jwt");
+  res.json({ message: "Cierre de sesión exitoso" });
+});
+
   
+
+// Ruta protegida
+app.get("/protected", authenticate, (req, res) => {
+  res.json({ message: `Bienvenido, ${req.user.username}` });
+});
+
+
 // Ruta para desencriptar
 router.post("/decrypt", (req, res) => {
   const { encryptedData } = req.body;
