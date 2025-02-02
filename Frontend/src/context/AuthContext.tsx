@@ -1,32 +1,35 @@
 import React, { createContext, useContext, useState } from "react";
 import { login, register } from "../api/auth";
-// import Cookies from "js-cookie";
 import Cookiess from 'universal-cookie';
-import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
+interface User {
+    nombre: string;
+    avatar: string;
+}
 interface AuthContextProps {
-    user: string | null;
+    user: User | null;
     isAuthenticated: boolean;
     loginUser: (usuario: string, password: string) => Promise<void>;
     registerUser: (nombre: string, usuario: string, password: string, avatar: string) => Promise<void>;
     logoutUser: () => void;
 }
-// const navigate = useNavigate();
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [user, setUser] = useState<string | null>(null);
+
+    const [user, setUser] = useState<User | null>(null);
 
     const cookies = new Cookiess();
     const loginUser = async (usuario: string, password: string) => {
-        console.log("usuario: ", usuario, "pass: ", password);
         try {
             await login(usuario, password);
             const token = cookies.get("jwt");
             if (token) {
-                setUser(usuario);
-                console.log("Token encontrado en la cookie:", token);
+                const decoded: { nombre: string; avatar: string } = jwtDecode(token);
+                localStorage.setItem("user", JSON.stringify({ nombre: decoded.nombre, avatar: decoded.avatar }));
+                setUser({ nombre: decoded.nombre, avatar: decoded.avatar });
             } else {
                 throw new Error("No se pudo encontrar el token en la cookie.");
             }
