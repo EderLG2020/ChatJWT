@@ -2,6 +2,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const passport = require("./config/passportCookie");
 const authRoutes = require("./router/authRouter");
+const userRouter = require("./router/userRouter");
 const helmet = require("helmet")
 const cors = require("cors")
 const http = require("http");
@@ -34,6 +35,7 @@ app.use(passport.initialize());
 app.use(express.json())
 
 app.use("/auth", authRoutes);
+app.use("/", userRouter);
 
 app.listen(3000, () => {
   console.log("Servidor escuchando en http://localhost:3000");

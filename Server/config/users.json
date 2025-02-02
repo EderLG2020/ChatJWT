@@ -4,33 +4,33 @@
     "nombre": "Chemita",
     "usuario": "Chemita",
     "password": "$2b$05$nRrJ/buCwbkVF4Fvp2xouuzkd2WDHYhV8fg1xMKTv2QYp3FFU2lrG",
-    "avatar": "https://randomuser.me/api/portraits/men/67.jpg"
+    "avatar": "https://randomuser.me/api/portraits/men/14.jpg"
   },
   {
     "id": "22d66c81-b4e9-4cd5-bc9f-12444105e9ce",
     "nombre": "Edersito45",
     "usuario": "Ederlg20225",
     "password": "$2b$05$50kHvultSqXCekP.yb9V2Ouktrje/gnbyOOyX.kqU3q9slXafjv4W",
-    "avatar": "https://randomuser.me/api/portraits/men/67.jpg"
+    "avatar": "https://randomuser.me/api/portraits/men/13.jpg"
   },
   {
     "id": "fc053cb7-21c6-4ccd-840e-f35ca9e34aa5",
     "nombre": "Edersito45",
     "usuario": "Ederlg20225s",
     "password": "$2b$05$S20LqQBeuamAxM6IYFpj3.crl6/AG4sUvpHxL1JI4TXwNsoTIHy0i",
-    "avatar": "https://randomuser.me/api/portraits/men/67.jpg"
+    "avatar": "https://randomuser.me/api/portraits/men/12.jpg"
   },
   {
     "id": "a2284317-01f6-4b89-9c53-b5bec5d0eea6",
     "nombre": "Edersito45",
-    "usuario": "Ederlg2022d5s",
+    "usuario": "Eder5s",
     "password": "$2b$05$eaM82EU.bsw.k0w/yDJEJO8yLHcVgyYljJScTfS78CRUpxi508Go6",
-    "avatar": "https://randomuser.me/api/portraits/men/67.jpg"
+    "avatar": "https://randomuser.me/api/portraits/men/11.jpg"
   },
   {
     "id": "694c8259-af68-41fb-902d-6fcfbad5d176",
     "nombre": "Edersito45",
-    "usuario": "Ederlg20d22d5s",
+    "usuario": "Ederlg1540",
     "password": "$2b$05$X/wIk1b1UVmAqLygUE6xzuIjiWrZuZgQkeLMvk088QGntUhMEDyhC",
     "avatar": "https://randomuser.me/api/portraits/men/67.jpg"
   },
@@ -53,6 +53,6 @@
     "nombre": "Mari",
     "usuario": "Mari",
     "password": "$2b$05$a5AQovBDAf024hkegJcKle5U9VG5ZUKePM6Hkkez.t39lPe50hwy.",
-    "avatar": "https://randomuser.me/api/portraits/men/71.jpg"
+    "avatar": "https://randomuser.me/api/portraits/men/72.jpg"
   }
 ]
