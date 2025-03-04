@@ -15,6 +15,7 @@ export const login = async (usuario: string, password: string) => {
 export const register = async (
   nombre: string,
   usuario: string,
+  dni: string,
   password: string,
   avatar: string
 ) => {
@@ -22,6 +23,7 @@ export const register = async (
     const response = await axios.post('http://localhost:3000/auth/register', {
       nombre,
       usuario,
+      dni,
       password,
       avatar,
     });

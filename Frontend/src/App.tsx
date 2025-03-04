@@ -5,10 +5,12 @@ import Login from './components/Login'
 import Register from './components/Register'
 import ProtectedRoute from './components/ProtectedRoute'
 import Messenger from "./components/Messenger";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <AuthProvider>
+      <ToastContainer />
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />

@@ -40,7 +40,7 @@ async function login(req, res) {
 }
 
 async function register(req, res) {
-  const { nombre, usuario, password, avatar } = req.body;
+  const { nombre, usuario, password, avatar, dni } = req.body;
   const users = userList;
   if (users.some((u) => u.usuario === usuario)) {
     return res.status(400).json({ message: "El usuario ya existe" });
@@ -54,10 +54,11 @@ async function register(req, res) {
     usuario,
     password: passhash,
     avatar,
+    dni
   };
 
   addUser(newUser);
-console.log(JWT_SECRET);
+  console.log(JWT_SECRET);
 
   const token = jwt.sign(
     { id: newUser.id, nombre: newUser.nombre, usuario: newUser.usuario },

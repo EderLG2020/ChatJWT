@@ -11,7 +11,7 @@ interface AuthContextProps {
     user: User | null;
     isAuthenticated: boolean;
     loginUser: (usuario: string, password: string) => Promise<void>;
-    registerUser: (nombre: string, usuario: string, password: string, avatar: string) => Promise<void>;
+    registerUser: (nombre: string, usuario: string,dni:string, password: string, avatar: string) => Promise<void>;
     logoutUser: () => void;
 }
 
@@ -40,8 +40,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     };
 
 
-    const registerUser = async (nombre: string, usuario: string, password: string, avatar: string) => {
-        const rpt = await register(nombre, usuario, password, avatar);
+    const registerUser = async (nombre: string, usuario: string, dni:string, password: string, avatar: string) => {
+        const rpt = await register(nombre, usuario,dni, password, avatar);
         if (rpt) {
             console.log("Usuario registrado correctamente, esperando antes de iniciar sesión...");
             setTimeout(async () => {
