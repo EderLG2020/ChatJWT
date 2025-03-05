@@ -1,7 +1,7 @@
 [
   {
-    "idMessenger": "preftgh-preftgh-preftgh",
-    "idUser": "2ef8dfa3-20c3-4423-af16-07622fc1deeb",
+    "idMessenger": "abcd-olep-ploi-sldo",
+    "idUser": "31460537-f7b9-4e4b-931e-8aa455443c3e",
     "message": "Hola? ",
     "image": "",
     "video": "",
@@ -12,8 +12,8 @@
     "visto": false
   },
   {
-    "idMessenger": "preftgh-preftgh-sdkjs",
-    "idUser": "2ef8dfa3-20c3-4423-af16-07622fc1deeb",
+    "idMessenger": "abcd-olep-ploi-sldo",
+    "idUser": "31460537-f7b9-4e4b-931e-8aa455443c3e",
     "message": "te conozco?",
     "image": "",
     "video": "",
@@ -24,7 +24,7 @@
     "visto": false
   },
   {
-    "idMessenger": "preftgh-preftgh-s78s",
+    "idMessenger": "abcd-olep-ploi-sldo",
     "idUser": "f276bbe4-37ac-4488-9e3a-2b3e65c07da1",
     "message": "si :v",
     "image": "",
@@ -36,8 +36,8 @@
     "visto": false
   },
   {
-    "idMessenger": "preftgh-preftgh-s78s",
-    "idUser": "2ef8dfa3-20c3-4423-af16-07622fc1deeb",
+    "idMessenger": "abcd-olep-ploi-sldo",
+    "idUser": "31460537-f7b9-4e4b-931e-8aa455443c3e",
     "message": "Maria?",
     "image": "",
     "video": "",
@@ -48,7 +48,7 @@
     "visto": false
   },
   {
-    "idMessenger": "f4835f72-4a8f-499f-90dd-074d7606ecbe",
+    "idMessenger": "abcd-olep-ploi-sldo",
     "idUser": "f276bbe4-37ac-4488-9e3a-2b3e65c07da1",
     "message": "No te acuerddddas? soy yo xd",
     "image": "",
@@ -60,9 +60,45 @@
     "visto": false
   },
   {
-    "idMessenger": "8a2a1a1c-87e8-44f4-8de2-7e4261e1c72c",
-    "idUser": "2ef8dfa3-20c3-4423-af16-07622fc1deeb",
-    "message": "La payasa del salon verdad?",
+    "idMessenger": "abcd-olep-ploi-s741",
+    "idUser": "31460537-f7b9-4e4b-931e-8aa455443c3e",
+    "message": "Que dire en unos años?",
+    "image": "",
+    "video": "",
+    "audio": "",
+    "Emojireaccion": "",
+    "fecha_creacion": "16/2/2025, 14:44:15",
+    "fecha_visto": "",
+    "visto": false
+  },
+  {
+    "idMessenger": "abcd-olep-ploi-s741",
+    "idUser": "ce255cf0-c977-47e4-a7c3-8a245d85f12d",
+    "message": "Habia otra opcion?",
+    "image": "",
+    "video": "",
+    "audio": "",
+    "Emojireaccion": "",
+    "fecha_creacion": "16/2/2025, 14:44:15",
+    "fecha_visto": "",
+    "visto": false
+  },
+  {
+    "idMessenger": "abcd-olep-ploi-s741",
+    "idUser": "31460537-f7b9-4e4b-931e-8aa455443c3e",
+    "message": "no",
+    "image": "",
+    "video": "",
+    "audio": "",
+    "Emojireaccion": "",
+    "fecha_creacion": "16/2/2025, 14:44:15",
+    "fecha_visto": "",
+    "visto": false
+  },
+  {
+    "idMessenger": "abcd-olep-ploi-s741",
+    "idUser": "ce255cf0-c977-47e4-a7c3-8a245d85f12d",
+    "message": "Bien hecho!",
     "image": "",
     "video": "",
     "audio": "",

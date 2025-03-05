@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useAuth } from "../context/AuthContext";
+import { useAuthStore } from "../store/authStore";
 import { useNavigate } from "react-router-dom";
 
 type FormData = {
@@ -12,7 +12,7 @@ type FormData = {
 };
 
 const Register: React.FC = () => {
-  const { registerUser } = useAuth();
+  const { registerUser } = useAuthStore();
   const navigate = useNavigate();
 
   const {

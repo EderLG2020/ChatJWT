@@ -35,6 +35,6 @@ export const register = async (
 };
 
 export const getProtectedData = async () => {
-  const response = await api.get("/protected");
+  const response = await api.get("/messenger");
   return response.data;
 };

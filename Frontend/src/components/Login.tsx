@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useAuth } from "../context/AuthContext";
+import { useAuthStore } from "../store/authStore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,7 +11,7 @@ type FormData = {
 };
 
 const Login: React.FC = () => {
-  const { loginUser } = useAuth();
+  const { loginUser } = useAuthStore();
   const navigate = useNavigate();
 
   const {
@@ -20,6 +20,7 @@ const Login: React.FC = () => {
     formState: { errors },
   } = useForm<FormData>();
 
+
   const onSubmit = async (data: FormData) => {
     try {
       await loginUser(data.usuario, data.password);
@@ -27,7 +28,7 @@ const Login: React.FC = () => {
         position: "top-right",
         autoClose: 3000,
       });
-      navigate("/protected");
+      navigate("/messenger");
     } catch (error) {
       console.error(error);
       toast.error("Error al iniciar sesión", {
