@@ -4,6 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import { login, register } from "../api/auth";
 
 interface User {
+  id: string;
   nombre: string;
   avatar: string;
 }
@@ -27,13 +28,18 @@ const cookies = new Cookies();
 export const useAuthStore = create<AuthState>((set) => {
   const token = cookies.get("jwt");
 
-  let initialUser = null;
+  let initialUser: User | null = null;
   let initialAuth = false;
 
   if (token) {
     try {
-      const decoded: { nombre: string; avatar: string } = jwtDecode(token);
-      initialUser = { nombre: decoded.nombre, avatar: decoded.avatar };
+      const decoded: { id: string; nombre: string; avatar: string } =
+        jwtDecode(token);
+      initialUser = {
+        id: decoded.id,
+        nombre: decoded.nombre,
+        avatar: decoded.avatar,
+      };
       initialAuth = true;
     } catch (error) {
       console.error("Token inválido:", error);
@@ -50,9 +56,14 @@ export const useAuthStore = create<AuthState>((set) => {
         await login(usuario, password);
         const token = cookies.get("jwt");
         if (token) {
-          const decoded: { nombre: string; avatar: string } = jwtDecode(token);
+          const decoded: { id: string; nombre: string; avatar: string } =
+            jwtDecode(token);
           set({
-            user: { nombre: decoded.nombre, avatar: decoded.avatar },
+            user: {
+              id: decoded.id,
+              nombre: decoded.nombre,
+              avatar: decoded.avatar,
+            },
             isAuthenticated: true,
           });
         } else {

@@ -1,4 +1,4 @@
-const { messengerList, addMessenger, conversationList, } = require("../config/db");
+const { messengerList, addMessenger, conversationList, userList, } = require("../config/db");
 const { v4 } = require("uuid");
 
 async function listMessengerForFriend(req, res) {
@@ -76,10 +76,21 @@ async function listFriendConversation(req, res) {
         (c) => c.idEmisor === idUser || c.idReceptor === idUser
     );
 
-    const idMessengerList = conversaciones.map((c) => c.idMessenger);
+    const resultado = conversaciones.map((c) => {
+        const idFriend = c.idEmisor === idUser ? c.idReceptor : c.idEmisor;
+        const user = userList.find((user) => user.id === idFriend);
 
-    res.status(200).json(idMessengerList);
+        return {
+            id: c.idMessenger,
+            idFriend,
+            name: user ? user.usuario : "Desconocido",
+            avatar: user ? user.avatar : null,
+        };
+    });
+
+    res.status(200).json(resultado);
 }
+
 
 
 module.exports = {

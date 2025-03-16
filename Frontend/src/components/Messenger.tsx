@@ -9,6 +9,22 @@ const Messenger: React.FC = () => {
     const user = useAuthStore((state) => state.user);
     const [search, setSearch] = useState(""); 
 
+    console.log("userId123",user?.id);
+    
+    // realizar consulta a esta api http://localhost:3000/messenger/friend/listFrind
+
+    // {
+    //     "idUser":"aqui va el user.id"
+    // }
+
+    // la cual tendre datos como esto
+    // [
+        //     "abcd-olep-ploi-sldo",
+        //     "abcd-olep-ploi-s741"
+        // ]
+        
+        // relizar consulta por cada uno 
+
     const messages = useMemo(() => [
         {
             id: 1,
@@ -28,7 +44,7 @@ const Messenger: React.FC = () => {
             time: "12 Nov",
             unread: false,
             isOnline: true,
-            seen: true
+            seen: true /** Visto */
         },
     ], []);
 
